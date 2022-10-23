@@ -7,7 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-import study.querydsl.entity.QMember;
+
+import static study.querydsl.entity.QMember.*;
+
 import study.querydsl.entity.Team;
 
 import javax.persistence.EntityManager;
@@ -57,9 +59,9 @@ public class QuerydslBasicTest {
         QMember m = new QMember("m");
 
         Member findMember = jpaQueryFactory
-                .select(m)
-                .from(m)
-                .where(m.username.eq("member1"))
+                .select(member)
+                .from(member)
+                .where(member.username.eq("member1"))
                 .fetchOne();
 
         Assertions.assertThat(findMember.getUsername()).isEqualTo("member1");
