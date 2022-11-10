@@ -34,11 +34,11 @@ public class InitMember {
             em.persist(teamA);
             em.persist(teamB);
 
-            for (int i = 0; i < 100; i++) {
-                Team selectedTeam = i % 2 == 0 ? teamA : teamB;
-
-                em.persist(new Member("member" + i, i, selectedTeam));
-            }
+//            for (int i = 0; i < 100; i++) {
+//                Team selectedTeam = i % 2 == 0 ? teamA : teamB;
+//
+//                em.persist(new Member("member" + i, i, selectedTeam));
+//            }
         }
     }
 }
