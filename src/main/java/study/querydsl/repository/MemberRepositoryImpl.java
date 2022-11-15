@@ -113,7 +113,7 @@ public class MemberRepositoryImpl implements MemberRepositoryCustom {
                         ageLoe(condition.getAgeLoe())
                 );
 
-        return PageableExecutionUtils.getPage(content, pageable, countQuery::fetchCount());
+        return PageableExecutionUtils.getPage(content, pageable, countQuery::fetchCount);
 
 //        return new PageImpl<>(content, pageable, total);
     }
