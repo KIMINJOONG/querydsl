@@ -41,10 +41,10 @@ public class MemberRepositoryImpl extends QuerydslRepositorySupport implements M
         List<MemberTeamDto> result = from(member)
                 .leftJoin(member.team, team)
                 .where(
-                        usernameEq(condition.getUnsername()),
+                        `usernameEq(condition.getUnsername()),
                         teamEq(condition.getTeamName()),
                         ageGoe(condition.getAgeGoe()),
-                        ageLoe(condition.getAgeLoe())
+                        ageLoe(condition.getAgeLoe())`
                 )
                 .select(new QMemberTeamDto(
                         member.id.as("memberId"),
